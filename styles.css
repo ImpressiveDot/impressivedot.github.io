@@ -1,40 +1,133 @@
-body {
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+:root {
+    --color-primario: #FF6B6B;
+    --color-secundario: #1E1E2E;
+    --color-texto: #FFFFFF;
+    --color-fondo: #121212;
+    --color-acento: #FFD166;
+}
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
 }
 
 header {
-    background-color: #222;
-    color: white;
-    padding: 15px;
+    background: var(--color-secundario);
+    padding: 20px 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
 }
 
 nav a {
-    color: white;
     text-decoration: none;
+    color: var(--color-acento);
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-primario);
 }
 
 section {
-    padding: 40px;
+    padding: 60px 20px;
     text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color-acento);
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .gallery img, .gallery video {
     width: 300px;
-    margin: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery img:hover, .gallery video:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+#contacto a {
+    color: var(--color-primario);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#contacto a:hover {
+    color: var(--color-acento);
+}
+
+/* Efecto Fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gallery img, .gallery video {
+        width: 100%;
+        max-width: 350px;
+    }
 }
