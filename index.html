@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio</title>
+    <title>Mi Portfolio - Liber</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- 🔹 Navbar fijo -->
     <header>
-        <h1>Mi Portfolio</h1>
         <nav>
+            <h1>Mi Portfolio</h1>
             <ul>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#trabajos">Trabajos</a></li>
@@ -19,28 +20,39 @@
         </nav>
     </header>
 
-    <section id="sobre-mi" class="fade-in">
-        <h2>Sobre mí</h2>
-        <p>Hola, soy Liber, diseñadora gráfica y creadora de contenido visual. Me especializo en branding, redes sociales y animaciones.</p>
-    </section>
-
-    <section id="trabajos" class="fade-in">
-        <h2>Trabajos</h2>
-        <div class="gallery">
-            <img src="img/trabajo1.jpg" alt="Trabajo 1">
-            <img src="img/trabajo2.jpg" alt="Trabajo 2">
-            <video controls>
-                <source src="videos/reel.mp4" type="video/mp4">
-                Tu navegador no soporta videos.
-            </video>
+    <!-- 🔹 Sección Sobre mí -->
+    <section id="sobre-mi">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <p>Hola, soy Liber, diseñadora gráfica y creadora de contenido visual.</p>
         </div>
     </section>
 
-    <section id="contacto" class="fade-in">
-        <h2>Contacto</h2>
-        <p>Envíame un email a: <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
+    <!-- 🔹 Sección Trabajos -->
+    <section id="trabajos">
+        <div class="container">
+            <h2>Mis Trabajos</h2>
+            <div class="galeria">
+                <img src="images/trabajo1.jpg" alt="Trabajo 1">
+                <img src="images/trabajo2.jpg" alt="Trabajo 2">
+                <video src="videos/reel.mp4" controls></video>
+            </div>
+        </div>
     </section>
 
-    <script src="script.js"></script>
+    <!-- 🔹 Sección Contacto -->
+    <section id="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Envíame un email a <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
+            <form>
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo" required>
+                <textarea placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
 </body>
 </html>
